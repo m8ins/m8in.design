@@ -1,4 +1,5 @@
 const sortByDisplayOrder = require("./src/utils/sort-by-display-order");
+const rssPlugin = require('@11ty/eleventy-plugin-rss');
 
 // Filters
 const dateFilter = require('./src/filters/date-filter');
@@ -14,6 +15,9 @@ module.exports = (config) => {
   config.addCollection("work", (collection) => {
     return sortByDisplayOrder(collection.getFilteredByGlob("./src/work/*.md"));
   });
+
+  // Plugins
+  config.addPlugin(rssPlugin);
 
   // Returns featured work items, sorted by display order
   config.addCollection("featuredWork", (collection) => {
@@ -33,6 +37,8 @@ module.exports = (config) => {
       return Number(a.fileSlug) > Number(b.fileSlug) ? 1 : -1;
     });
   });
+
+  config.setUseGitIgnore(false);
 
   return {
     markdownTemplateEngine: "njk",
