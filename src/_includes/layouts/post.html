@@ -1,8 +1,10 @@
 {% extends "layouts/base.html" %}
 
+{% set pageCriticalStyles = ['css/page.css'] %}
+
 {% set pageHeaderTitle = title %}
 
-{# Grab other posts that aren't this one for the 'more from this blog'-view #}
+{# Grab other posts that aren't this one for the 'more from the blog' feed #}
 {% set recommendedPosts = helpers.getSiblingContent(collections.blog, page) %}
 
 {# Render post date and any tags that this post has been filed under #}
@@ -27,6 +29,7 @@
     <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 gap-top-700 ]">
       {{ content | safe }}
     </div>
+
     {% if recommendedPosts %}
       <footer class="recommended-posts">
         {% set postListItems = recommendedPosts %}

@@ -1,15 +1,22 @@
 const sortByDisplayOrder = require("./src/utils/sort-by-display-order");
-const rssPlugin = require('@11ty/eleventy-plugin-rss');
+const rssPlugin = require("@11ty/eleventy-plugin-rss");
 
 // Filters
-const dateFilter = require('./src/filters/date-filter');
-const w3DateFilter = require('./src/filters/w3-date-filter');
+const dateFilter = require("./src/filters/date-filter");
+const w3DateFilter = require("./src/filters/w3-date-filter");
+
+//Transforms
+const htmlMinTransform = require("./src/transforms/html-min-transform");
+
+const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = (config) => {
-  config.addPassthroughCopy("./src/images/");
+  if (isProduction) {
+    config.addTransform('htmlmin', htmlMinTransform);
+  }
 
-  config.addFilter('dateFilter', dateFilter);
-  config.addFilter('w3DateFilter', w3DateFilter);
+  config.addFilter("dateFilter", dateFilter);
+  config.addFilter("w3DateFilter", w3DateFilter);
 
   // Returns work items, sorted by display order
   config.addCollection("work", (collection) => {
@@ -32,8 +39,8 @@ module.exports = (config) => {
   });
 
   // Returns a list of people ordered by filename
-  config.addCollection('people', collection => {
-    return collection.getFilteredByGlob('./src/people/*.md').sort((a, b) => {
+  config.addCollection("people", (collection) => {
+    return collection.getFilteredByGlob("./src/people/*.md").sort((a, b) => {
       return Number(a.fileSlug) > Number(b.fileSlug) ? 1 : -1;
     });
   });
