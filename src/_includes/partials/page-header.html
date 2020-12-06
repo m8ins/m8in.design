@@ -1,4 +1,4 @@
-<div class="[ page-header ]">
+<div class="[ page-header flow ]">
   <div class="[ inner-wrapper ]">
     {% if pageHeaderSummary %}
       <div class="[ page-header__summary ] [ measure-long ]">
@@ -11,6 +11,7 @@
   </div>
   {% if pageHeaderTags %}
     <div class="inner-wrapper">
+      {% include "partials/tag-list.html" %}
       {{ pageHeaderTags | safe }}
     </div>
   {% endif %}

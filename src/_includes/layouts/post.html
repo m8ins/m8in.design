@@ -14,16 +14,6 @@
 
 {% if tags %}
   {% set pageHeaderTags %}
-  <div>
-    <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
-    <ul class="tags-list" aria-describedby="tags-desc">
-      {% for tag in tags %}
-        <li>
-          <a href="/tag/{{ tag | slug }}/">#{{ tag | replace(' ', '') | capitalize }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
   {% endset %}
 {% endif %}
 

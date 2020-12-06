@@ -1,0 +1,10 @@
+<div>
+  <p class="visually-hidden" id="tags-desc">Tags that this post has been filed under.</p>
+  <ul class="tags-list" aria-describedby="tags-desc">
+    {% for tag in tags %}
+      <li>
+        <a class="tag" data-tag="{{ tag | slug }}" href="/tag/{{ tag | slug }}/">{{ tag | capitalize }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

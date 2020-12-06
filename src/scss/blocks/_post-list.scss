@@ -1,4 +1,7 @@
 .post-list {
+  a {
+    text-decoration: none;
+  }
   &__item {
     display: flex;
     gap: var(--spacing-06);
