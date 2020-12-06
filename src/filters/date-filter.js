@@ -1,6 +1,8 @@
-const moment = require('moment');
-
-module.exports = value => {
-  const dateObject = moment(value);
-  return `${dateObject.format('Do')} of ${dateObject.format('MMMM YYYY')}`;
+module.exports = (value) => {
+  const dateObject = new Date(value);
+  return dateObject.toLocaleDateString("de-DE", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
 };

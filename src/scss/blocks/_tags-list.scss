@@ -2,13 +2,22 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  gap: var(--layout-03);
 
   &[class] {
-    margin-inline-start: -#{get-size('400')};
+    margin-top: var(--layout-02);
   }
 
   > * {
-    padding-top: get-size('400');
-    padding-inline-start: get-size('400');
+    // padding-top: var(--spacing-04);
+    // padding-inline-start: var(--spacing-04);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-01);
+    color: var(--primary-09);
+  }
+
+  a {
+    text-decoration: none;
   }
 }

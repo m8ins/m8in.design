@@ -1,27 +1,22 @@
-$headline-highlights: ('dark', 'primary', 'secondary', 'quaternary', 'quinary');
-
 .headline {
-  font-size: get-size('700');
-  max-width: 18ch;
-
-  @include media-query('md') {
-    font-size: get-size('800');
-  }
-
-  @include media-query('lg') {
-    font-size: get-size('900');
-  }
+  font-size: 2.5rem;
+  
 
   &::after {
-    content: '.';
+    position: absolute;
+    content: "";
+    height: 0.25rem;
+    background-color: var(--primary-06);
+    width: 16rem;
+    left: var(--layout-02);
+    bottom: calc(var(--spacing-05) * -1);
   }
 
-  // For each color, create an exception
-  @each $headline-highlight in $headline-highlights {
-    &[data-highlight='#{$headline-highlight}'] {
-      &::after {
-        color: get-color($headline-highlight);
-      }
-    }
+  @include media-query("md") {
+    font-size: 3rem;
+  }
+
+  @include media-query("lg") {
+    font-size: 3rem;
   }
 }
