@@ -4,9 +4,13 @@
   }
   &__item {
     display: flex;
-    gap: var(--spacing-06);
+    // gap: var(--spacing-06);
     align-items: baseline;
     border-radius: 8px;
+
+    & > * + * {
+      margin-left: var(--spacing-06);
+    }
   }
   &__link {
     text-decoration: none;

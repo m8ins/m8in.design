@@ -9,7 +9,7 @@
     background-color: var(--primary-06);
     width: 16rem;
     left: var(--layout-02);
-    bottom: calc(var(--spacing-05) * -1);
+    bottom: calc(var(--spacing-04) * -1);
   }
 
   @include media-query("md") {

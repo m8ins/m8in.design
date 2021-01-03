@@ -1,5 +1,5 @@
 ---
-title: 'The Issue 33 Blog'
+title: 'Stuff I wrote'
 layout: 'layouts/feed.html'
 pagination:
   data: collections.blog
@@ -9,6 +9,3 @@ paginationPrevText: 'Newer posts'
 paginationNextText: 'Older posts'
 paginationAnchor: '#post-list'
 ---
-
-The latest articles from around the studio, demonstrating our design
-thinking, strategy and expertise.

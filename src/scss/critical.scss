@@ -139,21 +139,21 @@ h4 {
   background: var(--grey-09);
 }
 
-// Scrollbar styles
-::-webkit-scrollbar {
-  height: 1rem;
-}
+// // Scrollbar styles
+// ::-webkit-scrollbar {
+//   height: 1rem;
+// }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-  border: 1px solid var(--grey-06);
-  border-radius: 0.25rem;
-}
+// ::-webkit-scrollbar-track {
+//   background-color: transparent;
+//   border: 1px solid var(--grey-06);
+//   border-radius: 0.25rem;
+// }
 
-::-webkit-scrollbar-thumb {
-  background-color: var(--grey-09);
-  border-radius: 0.25rem;
-}
+// ::-webkit-scrollbar-thumb {
+//   background-color: var(--grey-09);
+//   border-radius: 0.25rem;
+// }
 
 // Import blocks
 @import "blocks/button";

@@ -1,4 +1,4 @@
-<div class="[ post-list dot-shadow panel ] [ bg-02 ]" id="post-list">
+<div class="[ post-list ] [ panel ]" id="post-list">
   <div class="[ inner-wrapper ] [ flow flow-space-700 ]">
     {% if postListHeadline %}
       <h2>
@@ -15,7 +15,7 @@
                 <a href="{{ item.url }}" class="post-list__link">{{ item.data.title }}</a>
               </h3>
               {% if item.data.tags %}
-              {% set tags = item.data.tags %}
+                {% set tags = item.data.tags %}
                 {% include "partials/tag-list.html" %}
               {% endif %}
             </div>

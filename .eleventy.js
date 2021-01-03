@@ -1,5 +1,6 @@
 const sortByDisplayOrder = require("./src/utils/sort-by-display-order");
 const rssPlugin = require("@11ty/eleventy-plugin-rss");
+const { minify } = require("terser");
 
 // Filters
 const dateFilter = require("./src/filters/date-filter");
@@ -12,11 +13,22 @@ const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = (config) => {
   if (isProduction) {
-    config.addTransform('htmlmin', htmlMinTransform);
+    config.addTransform("htmlmin", htmlMinTransform);
   }
 
   config.addFilter("dateFilter", dateFilter);
   config.addFilter("w3DateFilter", w3DateFilter);
+
+  config.addNunjucksAsyncFilter("jsmin", async function (code, callback) {
+    try {
+      const minified = await minify(code);
+      callback(null, minified.code);
+    } catch (err) {
+      console.error("Terser error: ", err);
+      //fail gracefully
+      callback(null, code);
+    }
+  });
 
   // Returns work items, sorted by display order
   config.addCollection("work", (collection) => {

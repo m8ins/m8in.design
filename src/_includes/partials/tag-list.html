@@ -3,7 +3,7 @@
   <ul class="tags-list" aria-describedby="tags-desc">
     {% for tag in tags %}
       <li>
-        <a class="tag" data-tag="{{ tag | slug }}" href="/tag/{{ tag | slug }}/">{{ tag | capitalize }}</a>
+        <a class="tag" data-tag="{{ tag | slug }}" href="/tag/{{ tag | slug }}/">{{ tag }}</a>
       </li>
     {% endfor %}
   </ul>
