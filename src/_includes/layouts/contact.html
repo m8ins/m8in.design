@@ -1,0 +1,18 @@
+{% extends 'layouts/base.html' %}
+
+{# Intro content #}
+{% set pageHeaderTitle = title %}
+
+{% block content %}
+  <main id="main-content" tabindex="-1">
+    <article class="[ post ] [ h-entry ]">
+      {% include "partials/page-header.html" %}
+      <div class="inner-wrapper flow">
+        {{ content | safe }}
+        {% include "partials/contact-form.html" %}
+      </div>
+    </article>
+  </main>
+{% endblock %}
+
+{{ content | safe }}
