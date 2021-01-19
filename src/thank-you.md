@@ -1,5 +1,6 @@
 ---
 title: 'Thanks!'
+layout: 'layouts/page.html'
 permalink: '/thank-you/index.html'
 ---
 
