@@ -6,40 +6,46 @@
   }
 
   blockquote {
-    border-inline-start: 1rem solid get-color("quinary");
-    padding-inline-start: get-size("600");
-    padding-top: get-size("500");
-    padding-bottom: get-size("500");
+    border-inline-start: 0.5rem solid var(--blue-06);
+    padding-inline-start: var(--layout-02);
+    padding-top: var(--spacing-04);
+    padding-bottom: var(--spacing-04);
     font-style: italic;
   }
 
   h2 {
-    font-size: get-size("700");
+    font-size: var(--layout-03);
   }
 
   h3 {
-    font-size: get-size("600");
+    font-size: var(--layout-02);
   }
 
   ol,
   ul {
-    padding-inline-start: get-size("800");
+    padding-inline-start: var(--layout-03);
   }
 
   li + li {
-    margin-top: get-size("300");
+    margin-top: var(--spacing-03);
+  }
+
+  li > ul,
+  li > ol {
+    margin-top: var(--spacing-03);
+    margin-bottom: var(--spacing-06);
   }
 
   // Add a greater flow space for heading elements so
   // they appear more like article sections
   h2,
   h3 {
-    --flow-space: #{get-size("800")};
+    --flow-space: var(--layout-04);
   }
 
   // Add tighter flow for elements that follow a heading
   h2 + *,
   h3 + * {
-    --flow-space: #{get-size("300")};
+    --flow-space: var(--spacing-04);
   }
 }

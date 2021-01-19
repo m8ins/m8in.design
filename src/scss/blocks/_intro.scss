@@ -3,6 +3,7 @@
   display: grid;
   grid-template-rows: get-size('700') minmax(0, 1fr) get-size('700') auto;
   gap: get-size('500');
+  margin-bottom: var(--layout-06);
 
   // Force items to span 1 column
   > * {
@@ -11,7 +12,7 @@
 
   &__header {
     padding: get-size('300') get-size('500');
-    background: rgba(get-color('tertiary'), 0.95);
+    background: var(--purple-02);
     z-index: 1;
     grid-row: 2;
     margin: 0 get-size('500'); // Adds a horizontal gutter

@@ -69,5 +69,15 @@ module.exports = {
    */
   filterCollectionByKeys(collection, keys) {
     return collection.filter(x => keys.includes(x.data.key));
-  }
+  },
+
+  /**
+   * Returns the current year to keep the Copyright up-to-date.
+   *
+   * @returns {Date} current year
+   */
+   currentYear() {
+     const today = new Date();
+     return today.getFullYear();
+   }
 };

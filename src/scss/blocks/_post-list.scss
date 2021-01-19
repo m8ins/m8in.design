@@ -1,15 +1,25 @@
 .post-list {
+  a {
+    text-decoration: none;
+  }
+  &__item {
+    display: flex;
+    // gap: var(--spacing-06);
+    align-items: baseline;
+    border-radius: 8px;
+
+    & > * + * {
+      margin-left: var(--spacing-06);
+    }
+  }
   &__link {
-    font-size: get-size('700');
-    color: get-color('dark-shade');
-    text-decoration-color: get-color('primary-shade');
-
-    @include apply-utility('font', 'sans');
-    @include apply-utility('weight', 'bold');
-
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--text-02);
     &:hover {
-      color: get-color('primary-shade');
-      text-decoration-color: get-color('dark-shade');
+      color: var(--text-01);
+      text-decoration: underline;
+      text-decoration-color: var(--grey-06);
     }
   }
 }

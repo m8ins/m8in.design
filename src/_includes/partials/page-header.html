@@ -1,12 +1,18 @@
-<div class="[ page-header ] [ bg-light-glare ]">
-  <div class="[ wrapper ] [ flow ]">
+<div class="[ page-header flow ]">
+  <div class="[ inner-wrapper ]">
+    {% if pageHeaderSummary %}
+      <div class="[ page-header__summary ] [ measure-long ]">
+        {{ pageHeaderSummary | safe }}
+      </div>
+    {% endif %}
     <h1 class="[ page-header__heading ] [ headline ]" data-highlight="primary">
       {{ pageHeaderTitle }}
     </h1>
-    {% if pageHeaderSummary %}
-    <div class="[ page-header__summary ] [ measure-long ]">
-      {{ pageHeaderSummary | safe }}
-    </div>
-    {% endif %}
   </div>
+  {% if pageHeaderTags %}
+    <div class="inner-wrapper">
+      {% include "partials/tag-list.html" %}
+      {{ pageHeaderTags | safe }}
+    </div>
+  {% endif %}
 </div>

@@ -8,25 +8,115 @@
 
 // Global styles start
 :root {
-  --flow-space: #{get-size("600")};
+  --flow-space: var(--spacing-06);
+  --spacing-01: 0.125rem;
+  --spacing-02: 0.25rem;
+  --spacing-03: 0.5rem;
+  --spacing-04: 0.75rem;
+  --spacing-05: 1rem;
+  --spacing-06: 1.5rem;
+  --spacing-07: 2rem;
+  --spacing-08: 2.5rem;
+  --spacing-09: 3rem;
+
+  --layout-01: 1rem;
+  --layout-02: 1.5rem;
+  --layout-03: 2rem;
+  --layout-04: 3rem;
+  --layout-05: 4rem;
+  --layout-06: 6rem;
+  --layout-07: 10rem;
+
+  --blue-01: hsl(205, 79%, 92%);
+  --blue-02: hsl(205, 97%, 85%);
+  --blue-03: hsl(205, 84%, 74%);
+  --blue-04: hsl(205, 74%, 65%);
+  --blue-05: hsl(205, 65%, 55%);
+  --blue-06: hsl(205, 67%, 45%);
+  --blue-07: hsl(205, 76%, 39%);
+  --blue-08: hsl(205, 82%, 33%);
+  --blue-09: hsl(205, 87%, 29%);
+  --blue-10: hsl(205, 100%, 21%);
+
+  --grey-01: hsl(210, 36%, 96%);
+  --grey-02: hsl(212, 33%, 89%);
+  --grey-03: hsl(210, 31%, 80%);
+  --grey-04: hsl(211, 27%, 70%);
+  --grey-05: hsl(209, 23%, 60%);
+  --grey-06: hsl(210, 22%, 49%);
+  --grey-07: hsl(209, 28%, 39%);
+  --grey-08: hsl(209, 34%, 30%);
+  --grey-09: hsl(195, 30%, 20%);
+  --grey-10: hsl(209, 61%, 16%);
+
+  --primary-01: hsl(152, 70%, 96%);
+  --primary-02: hsl(154, 75%, 87%);
+  --primary-03: hsl(156, 73%, 74%);
+  --primary-04: hsl(158, 58%, 62%);
+  --primary-05: hsl(160, 51%, 49%);
+  --primary-06: hsl(162, 63%, 41%);
+  --primary-07: hsl(164, 71%, 34%);
+  --primary-08: hsl(166, 72%, 28%);
+  --primary-09: hsl(168, 80%, 23%);
+  --primary-10: hsl(170, 97%, 15%);
+
+  --purple-01: hsl(262, 61%, 93%);
+  --purple-02: hsl(261, 67%, 84%);
+  --purple-03: hsl(261, 54%, 68%);
+  --purple-04: hsl(261, 47%, 58%);
+  --purple-05: hsl(262, 43%, 51%);
+  --purple-06: hsl(262, 48%, 46%);
+  --purple-07: hsl(262, 60%, 38%);
+  --purple-08: hsl(261, 69%, 31%);
+  --purple-09: hsl(262, 72%, 25%);
+  --purple-10: hsl(263, 85%, 18%);
+
+  --red-01: hsl(0, 100%, 97%);
+  --red-02: hsl(0, 82%, 89%);
+  --red-03: hsl(0, 77%, 78%);
+  --red-04: hsl(0, 71%, 66%);
+  --red-05: hsl(0, 64%, 55%);
+  --red-06: hsl(0, 67%, 44%);
+  --red-07: hsl(0, 72%, 38%);
+  --red-08: hsl(0, 79%, 32%);
+  --red-09: hsl(0, 84%, 25%);
+  --red-10: hsl(0, 92%, 20%);
+
+  --yellow-01: hsl(45, 100%, 96%);
+  --yellow-02: hsl(45, 90%, 88%);
+  --yellow-03: hsl(45, 86%, 81%);
+  --yellow-04: hsl(43, 90%, 76%);
+  --yellow-05: hsl(43, 90%, 70%);
+  --yellow-06: hsl(42, 78%, 60%);
+  --yellow-07: hsl(42, 63%, 48%);
+  --yellow-08: hsl(43, 72%, 37%);
+  --yellow-09: hsl(43, 77%, 27%);
+  --yellow-10: hsl(43, 86%, 17%);
+
+  --text-01: var(--grey-10);
+  --text-02: var(--grey-08);
+  --text-03: var(--grey-06);
+  --base-size: 1.25rem;
+
+  --bg-01: white;
+  --bg-02: var(--grey-01);
 }
 
 body {
-  background: get-color("light");
-  color: get-color("dark-shade");
+  background: var(--bg-01);
+  color: var(--text-01);
   line-height: 1.5;
-  font-size: get-size("500");
-
-  @include apply-utility("font", "base");
+  font-size: 1.25rem;
+  font-family: "Inter", sans-serif;
 }
 
 a:not([class]) {
   color: currentColor;
-  text-decoration-color: get-color("quinary");
+  text-decoration-color: var(--primary-06);
 }
 
 :focus {
-  outline: 2px dashed get-color("primary");
+  outline: 2px dashed var(--primary-06);
   outline-offset: 0.25rem;
 }
 
@@ -38,37 +128,32 @@ h1,
 h2,
 h3,
 h4 {
-  font-weight: 900;
-
-  @include apply-utility("font", "sans");
-  @include apply-utility("leading", "flat");
+  font-weight: 600;
+  line-height: 1.125;
 }
 
 // High contrast selection because it can help visually-impaired
 // folks read the text easier
 ::selection {
-  color: get-color("light");
-
-  // We set this as an RGBA because that's how you get a solid color, by using 0.99
-  // alpha value. Browsers are wild.
-  background: rgba(get-color("dark-shade"), 0.99);
+  color: white;
+  background: var(--grey-09);
 }
 
-// Scrollbar styles
-::-webkit-scrollbar {
-  height: 1rem;
-}
+// // Scrollbar styles
+// ::-webkit-scrollbar {
+//   height: 1rem;
+// }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-  border: 1px solid get-color("dark-glare");
-  border-radius: 0.25rem;
-}
+// ::-webkit-scrollbar-track {
+//   background-color: transparent;
+//   border: 1px solid var(--grey-06);
+//   border-radius: 0.25rem;
+// }
 
-::-webkit-scrollbar-thumb {
-  background-color: get-color("dark");
-  border-radius: 0.25rem;
-}
+// ::-webkit-scrollbar-thumb {
+//   background-color: var(--grey-09);
+//   border-radius: 0.25rem;
+// }
 
 // Import blocks
 @import "blocks/button";
@@ -95,3 +180,4 @@ h4 {
 @import "utilities/visually-hidden";
 @import "utilities/wrapper";
 @import "utilities/auto-grid";
+@import "utilities/background";

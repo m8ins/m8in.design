@@ -1,28 +1,25 @@
 .button {
-  // I don't over-using @extends, but in this case, consistency is more important  
   @extend .radius;
 
   display: inline-block;
   padding: 0.5rem 2rem;
-  background: get-color('quaternary-glare');
-  color: get-color('dark-shade');
+  background: var(--primary-05);
+  color: var(--grey-08);
   border: 2px solid;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-
-  @include apply-utility('font', 'sans');
-  @include apply-utility('weight', 'bold');
+  font-weight: 800;
 
   // Make sure hover state trumps all variants with a good ol’ important
   &:hover {
-    background: get-color('quaternary') !important;
-    color: get-color('dark-shade') !important;
+    background: var(--primary-04) !important;
+    color: var(--grey-08) !important;
   }
 
   // Add a ghost modifier
   &[data-variant='ghost'] {
     background: transparent;
-    color: get-color('quaternary-glare');
+    color: var(--primary-09);
   }
 }
