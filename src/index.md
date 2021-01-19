@@ -1,7 +1,6 @@
 ---
-title: 'Issue 33'
-metaDesc: 'A made up agency site that you build if you take Learn
-Eleventy From Scratch, by Piccalilli'
+title: 'm8in.design'
+metaDesc: 'My soon-to-be-playground-portfolio-page'
 layout: 'layouts/home.html'
 intro:
   eyebrow: 'Hey there!'
@@ -14,8 +13,6 @@ intro:
 featuredWork:
   title: 'Selected work'
   summary: 'Some stuff that should give you an idea of what we’re all about.'
-studioFeed:
-  title: 'From inside the studio'
 pagination:
   data: collections.blog
   size: 5
