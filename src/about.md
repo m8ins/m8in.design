@@ -1,9 +1,9 @@
 ---
-title: 'About Issue 33'
+title: 'About myself'
 layout: 'layouts/about.html'
-permalink: '/about-us/index.html'
+permalink: '/about-me/index.html'
 ---
 
-Wanna see our foosball table? Nah, only kidding. We’re a made-up
-agency that are being used as the context for the Piccalilli course,
-[Learn Eleventy From Scratch](https://piccalil.li/course/learn-eleventy-from-scratch/).
+- Studied Technical Communication and Computer Science @RWTH Aachen University
+- Did another thing
+- I should write this page.
