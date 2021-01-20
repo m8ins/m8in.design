@@ -1,18 +1,18 @@
 {% set pageTitle = title + ' - ' + site.name %}
 
 {# We don't want any duplication. This is likely for the homepage #}
-{% if site.name === title %} 
+{% if site.name === title %}
   {% set pageTitle = title %}
 {% endif %}
 
 {% set siteTitle = site.name %}
 {% set currentUrl = site.url + page.url %}
 
-{% if not socialImage %}
+{# {% if not socialImage %}
   {% set socialImage = site.url + '/images/meta/social-share.png' %}
-{% endif %}
+{% endif %} #}
 
-{# If the page’s frontmatter has specific metaTitle and/or metaDesc items, switch 
+{# If the page’s frontmatter has specific metaTitle and/or metaDesc items, switch
   them into the mix #}
 {% if metaTitle %}
   {% set pageTitle = metaTitle %}

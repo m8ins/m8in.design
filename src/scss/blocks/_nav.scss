@@ -35,7 +35,7 @@
       color: var(--text-01);
       &:before {
         @include fake-border;
-        background: var(--primary-04);
+        background: var(--primary-05);
       }
     }
 
@@ -46,7 +46,7 @@
       color: var(--text-01);
       &:before {
         @include fake-border;
-        background: var(--primary-05);
+        background: var(--primary-04);
       }
     }
   }
