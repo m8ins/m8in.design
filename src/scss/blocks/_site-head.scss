@@ -1,19 +1,26 @@
 .site-head {
-  padding: var(--spacing-05) 0;
-  background-color: var(--grey-01);
+  // padding: var(--spacing-05) 0;
+  // background-color: var(--grey-01);
   margin-bottom: var(--layout-02);
-  box-shadow: var(--shadow-01);
+  // box-shadow: var(--shadow-01);
+  height: var(--layout-05);
+
+  > .wrapper {
+    height: 100%;
+  }
 
   &__inner {
+    height: 100%; //span the entire height of the nav bar
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid var(--grey-02);
   }
 
   &__brand {
     flex-shrink: 0;
-    margin-inline-end: get-size("600"); // Prevents nav bunching up to the logo
+    margin-inline-end: var(--layout-04); // Prevents nav bunching up to the logo
     text-decoration: none;
     font-weight: 800;
     display: block;
@@ -22,7 +29,7 @@
   }
 
   &__nav {
-    padding: get-size("300") 0;
+    padding: var(--spacing-03) 0;
   }
 
   @include media-query("md") {

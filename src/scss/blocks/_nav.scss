@@ -12,8 +12,12 @@
 .nav {
   line-height: 1;
   font-weight: 400;
-  margin-top: calc(var(--spacing-04) * -1);
   margin-inline-start: calc(var(--spacing-06) * -1);
+  height: 100%;
+
+  > * {
+    height: 100%;
+  }
 
   &__list {
     display: flex;
@@ -26,17 +30,14 @@
   }
 
   a {
+    height: 100%;
     text-decoration: none;
     display: block;
     position: relative;
-    color: var(--text-02);
+    color: var(--text-03);
 
     &:hover {
       color: var(--text-01);
-      &:before {
-        @include fake-border;
-        background: var(--primary-05);
-      }
     }
 
     // Adds the fake border to active state items
